@@ -67,7 +67,7 @@ const updateSingleContact = async (req, res) => {
         .replaceOne({ _id: contactId }, contact);
 
     if (result.modifiedCount > 0) {
-        res.status(204).send();
+        res.status(200).send();
     } else {
         res.status(500).json(result.error || "Some error ocurred while updating contact")
     }
@@ -85,9 +85,9 @@ const deleteContact = async (req, res) => {
         .deleteOne({ _id: contactId });
 
     if (result.deletedCount === 1) {
-        console.log("Successfully deleted one document.");
+        res.status(200).send();
     } else {
-        console.log("No documents matched the query. Deleted 0 documents.");
+        res.status(500).json(result.error || "Some error ocurred while Deleting contact")
     }
 
 }
