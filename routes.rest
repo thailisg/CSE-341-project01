@@ -1,0 +1,33 @@
+### GET ALL
+GET http://localhost:3000/users/
+
+
+### GET SINGLE
+GET http://localhost:3000/users/6a9c7345a1506e58de422443
+
+### CREATE
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+    "firstName": "Thai",
+    "lastName": "Test",
+    "email": "thai@test.com",
+    "favoriteColor": "purple",
+    "birthday": "July 9"
+}
+
+### UPDATE
+PUT http://localhost:3000/users/6aa5af0d744b48d378c56cd3
+Content-Type: application/json
+
+{
+    "firstName": "Thai Updated",
+    "lastName": "Test",
+    "email": "updated@test.com",
+    "favoriteColor": "black",
+    "birthday": "9 JULY"
+}
+
+### DELETE
+DELETE http://localhost:3000/users/6aa5af0d744b48d378c56cd3
